@@ -1,0 +1,159 @@
+* {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+	outline:none;
+}
+body {
+	background-color: rgba(40,40,0,1);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20,0,0,1)), to(rgba(40,40,40,1))); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, rgba(20,0,0,1), rgba(40,40,40,1)); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, rgba(20,0,0,1), rgba(40,40,40,1)); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, rgba(20,0,0,1), rgba(40,40,40,1)); /* IE10 */
+  background-image:      -o-linear-gradient(top, rgba(20,0,0,1), rgba(40,40,40,1)); /* Opera 11.10+ */
+  background-image:         linear-gradient(to bottom, rgba(20,0,0,1), rgba(40,40,40,1));
+  overflow:hidden;
+  height:100%;
+  
+}
+
+.template {
+	display:none;
+}
+.beam-node {
+ position:absolute;
+ left:750px;
+ top:300px;
+}
+.beam,.beam_node {
+	margin:0px;
+	-webkit-transition: all 18s linear;  /* Saf3.2+, Chrome */
+     -moz-transition: all 18s linear;  /* FF4+ */
+      -ms-transition: all 18s linear;  /* IE10 */
+       -o-transition: all 18s linear;  /* Opera 10.5+ */
+          transition: all 18s linear;
+	-webkit-transform-origin: 5px 5px;
+	-moz-transform-origin: 5px 5px;
+	-o-transform-origin: 5px 5px;
+	transform-origin: 5px 5px;
+	-webkit-transform:rotate(0deg);
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+
+.beam div {
+	height:10px;
+	display:inline-block;
+	position:absolute;
+}
+.moving .beam.left {
+	left:-2600px;
+}
+.moving .beam.up {
+	top:-2600px;
+}
+.moving .beam.right {
+	left:2600px;
+}
+.moving .beam.down {
+	top:2600px;
+}
+.beam-head {
+	width:10px;
+	background:rgba(255,255,0,0.6);
+	box-shadow:0 0 20px 4px yellow;
+	-webkit-box-shadow:0 0 20px 4px yellow;
+	-moz-box-shadow:0 0 20px 4px yellow;
+
+}
+.beam-tail {
+width:400px;
+  -webkit-transition: all 1s linear;  /* Saf3.2+, Chrome */
+     -moz-transition: all 1s linear;  /* FF4+ */
+      -ms-transition: all 1s linear;  /* IE10 */
+       -o-transition: all 1s linear;  /* Opera 10.5+ */
+          transition: all 1s linear;
+  background-image: -webkit-gradient(linear, left top,  right top, from(rgba(255,255,0,0.35)), to(rgba(255,255,0,0))); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(left, rgba(255,255,0,0.35), rgba(255,255,0,0)); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(left, rgba(255,255,0,0.35), rgba(255,255,0,0)); /* FF3.6 */
+  background-image:     -ms-linear-gradient(left, rgba(255,255,0,0.35), rgba(255,255,0,0)); /* IE10 */
+  background-image:      -o-linear-gradient(left, rgba(255,255,0,0.35), rgba(255,255,0,0)); /* Opera 11.10+ */
+  background-image:         linear-gradient(to left, rgba(255,255,0,0.35), rgba(255,255,0,0));
+}
+.beam-quad .beam-tail {
+	width:10px;
+}
+.beam-quad.moving .beam-tail {
+	width:400px;
+}
+
+
+/* ROTATIONS */
+
+.up {
+  -webkit-transform: rotate(90deg);  
+     -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);   
+       -o-transform: rotate(90deg);  
+          transform: rotate(90deg);
+}
+.right {
+	-webkit-transform: rotate(180deg);  /* Saf3.1+, Chrome */
+     -moz-transform: rotate(180deg);  /* FF3.5+ */
+      -ms-transform: rotate(180deg);  /* IE9 */
+       -o-transform: rotate(180deg);  /* Opera 10.5 */
+          transform: rotate(180deg);
+}
+.down {
+  -webkit-transform: rotate(270deg);  /* Saf3.1+, Chrome */
+     -moz-transform: rotate(270deg);  /* FF3.5+ */
+      -ms-transform: rotate(270deg);  /* IE9 */
+       -o-transform: rotate(270deg);  /* Opera 10.5 */
+          transform: rotate(270deg);
+}
+
+
+/* COLOURS */
+.beam.green .beam-tail {
+  
+  background-image: -webkit-gradient(linear, left top,  right top, from(rgba(75,255,75,0.35)), to(rgba(75,255,75,0))); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(left, rgba(75,255,75,0.35), rgba(75,255,75,0)); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(left, rgba(75,255,75,0.35), rgba(75,255,75,0)); /* FF3.6 */
+  background-image:     -ms-linear-gradient(left, rgba(75,255,75,0.35), rgba(75,255,75,0)); /* IE10 */
+  background-image:      -o-linear-gradient(left, rgba(75,255,75,0.35), rgba(75,255,75,0)); /* Opera 11.10+ */
+  background-image:         linear-gradient(to bottom, rgba(75,255,75,0.35), rgba(75,255,75,0));
+}
+.beam.green .beam-head {
+	background:rgba(75,255,75,0.6);
+	box-shadow:0 0 20px 4px rgb(75,255,75);
+	-webkit-box-shadow:0 0 20px 4px rgb(75,255,75);
+	-moz-box-shadow:0 0 20px 4px rgb(75,255,75);
+}
+.beam.red .beam-tail {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(255,75,75,0.35)), to(rgba(255,75,75,0))); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(left, rgba(255,75,75,0.35), rgba(255,75,75,0)); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(left, rgba(255,75,75,0.35), rgba(255,75,75,0)); /* FF3.6 */
+  background-image:     -ms-linear-gradient(left, rgba(255,75,75,0.35), rgba(255,75,75,0)); /* IE10 */
+  background-image:      -o-linear-gradient(left, rgba(255,75,75,0.35), rgba(255,75,75,0)); /* Opera 11.10+ */
+  background-image:         linear-gradient(to bottom, rgba(255,75,75,0.35), rgba(255,75,75,0));
+}
+.beam.red .beam-head {
+	background:rgba(255,75,75,0.6);
+	box-shadow:0 0 20px 4px rgb(255,75,75);
+	-webkit-box-shadow:0 0 20px 4px rgb(255,75,75);
+	-moz-box-shadow:0 0 20px 4px rgb(255,75,75);
+}
+.beam.blue .beam-tail {
+
+  background-image: -webkit-gradient(linear, left top,  right top, from( rgba(75,75,255,0.35)), to(rgba(75,75,255,0))); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(left,  rgba(75,75,255,0.35), rgba(75,75,255,0)); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(left,  rgba(75,75,255,0.35), rgba(75,75,255,0)); /* FF3.6 */
+  background-image:     -ms-linear-gradient(left,  rgba(75,75,255,0.35), rgba(75,75,255,0)); /* IE10 */
+  background-image:      -o-linear-gradient(left,  rgba(75,75,255,0.35), rgba(75,75,255,0)); /* Opera 11.10+ */
+  background-image:         linear-gradient(to bottom,  rgba(75,75,255,0.35), rgba(75,75,255,0));
+}
+.beam.blue .beam-head {
+	background:rgba(75,75,255,0.6);
+	box-shadow:0 0 20px 4px rgb(75,75,255);
+	-webkit-box-shadow:0 0 20px 4px rgb(75,75,255);
+	-moz-box-shadow:0 0 20px 4px rgb(75,75,255);
+}
